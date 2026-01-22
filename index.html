@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="마인드풀에어 - 호흡 명상으로 마음의 평화를 찾으세요">
+    <title>마인드풀에어 - 호흡 명상</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #7FAF9B;
+            --accent-teal: #5A9E8C;
+            --bg-beige: #F4F1EC;
+            --surface-beige: #FDFCFA;
+            --text-green: #3A4A45;
+            --text-muted: rgba(58, 74, 69, 0.7);
+            --shadow: 0 4px 20px rgba(90, 158, 140, 0.15);
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg-beige);
+            color: var(--text-green);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--surface-beige);
+            border-radius: 25px;
+            border: 1px solid var(--primary-teal);
+            color: var(--text-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(127, 175, 155, 0.15);
+        }
+
+        .lang-link:hover {
+            background: var(--primary-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.25);
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: var(--shadow);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-teal);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--surface-beige);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(127, 175, 155, 0.25);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--accent-teal);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--primary-teal);
+        }
+
+        .app-store-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-store-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .app-store-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .app-store-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(127, 175, 155, 0.4);
+        }
+
+        .app-store-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-teal);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Breathing Animation */
+        .breathing-circle {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(127, 175, 155, 0.1) 0%, transparent 70%);
+            top: -300px;
+            right: -300px;
+            animation: breathe 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="breathing-circle"></div>
+
+    <div class="lang-switcher">
+        <a href="en/index.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">🧘‍♀️</div>
+            <h1>마인드풀에어</h1>
+            <p class="tagline">호흡 명상으로 마음의 평화를 찾으세요</p>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>다양한 호흡 가이드</h3>
+                    <p>4-7-8 호흡법, 박스 호흡법 등 다양한 호흡 기법을 통해 스트레스를 해소하고 마음의 평정을 찾으세요.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>진행 상황 추적</h3>
+                    <p>매일의 명상 기록을 확인하고 성장 과정을 시각화하여 꾸준한 습관 형성을 도와드립니다.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">☁️</span>
+                    <h3>클라우드 동기화</h3>
+                    <p>기기를 바꿔도 걱정 없이 당신의 명상 기록을 안전하게 보관하고 언제든 확인하세요.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🌙</span>
+                    <h3>수면 개선</h3>
+                    <p>잠들기 전 호흡 명상으로 숙면을 취하고 상쾌한 아침을 맞이하세요.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">✈️</span>
+                    <h3>오프라인 사용</h3>
+                    <p>인터넷 연결 없이도 모든 호흡 명상 기능을 자유롭게 사용할 수 있습니다.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">⚙️</span>
+                    <h3>맞춤 설정</h3>
+                    <p>각 호흡 단계의 시간을 자유롭게 조절하여 자신에게 맞는 편안한 속도를 찾으세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="support.html">고객지원</a>
+            </div>
+            <p class="copyright">© 2026 마인드풀에어. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

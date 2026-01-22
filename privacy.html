@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - 마인드풀에어</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #7FAF9B;
+            --accent-teal: #5A9E8C;
+            --bg-beige: #F4F1EC;
+            --surface-beige: #FDFCFA;
+            --text-green: #3A4A45;
+            --text-muted: rgba(58, 74, 69, 0.7);
+            --shadow: 0 4px 20px rgba(90, 158, 140, 0.15);
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg-beige);
+            color: var(--text-green);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--surface-beige);
+            border-radius: 25px;
+            border: 1px solid var(--primary-teal);
+            color: var(--text-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(127, 175, 155, 0.15);
+        }
+
+        .lang-link:hover {
+            background: var(--primary-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.25);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-teal);
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .content-box {
+            background: var(--surface-beige);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--accent-teal);
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-teal);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .highlight-box {
+            background: rgba(127, 175, 155, 0.1);
+            border-left: 4px solid var(--primary-teal);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            border-radius: 30px;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(127, 175, 155, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-box {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switcher">
+        <a href="en/privacy.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>개인정보처리방침</h1>
+            <p class="last-updated">최종 수정일: 2026년 1월 22일</p>
+        </header>
+
+        <div class="content-box">
+            <p>마인드풀에어(이하 "회사")는 「개인정보 보호법」에 따라 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 다음과 같이 개인정보처리방침을 수립·공개합니다.
+            </p>
+
+            <h2>1. 개인정보의 처리 목적</h2>
+            <p>회사는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 「개인정보 보호법」 제18조에 따라
+                별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+
+            <ul>
+                <li><strong>앱 서비스 제공:</strong> 호흡 명상 기록 저장 및 클라우드 동기화</li>
+                <li><strong>고객 지원:</strong> 문의 응대 및 기술 지원</li>
+            </ul>
+
+            <h2>2. 개인정보의 수집 항목 및 방법</h2>
+
+            <h3>2.1 수집 항목</h3>
+            <ul>
+                <li><strong>필수 정보:</strong> 명상 기록 데이터</li>
+                <li><strong>자동 수집 정보:</strong> 기기 정보(OS 버전, 기기 모델), 앱 사용 통계, 광고 식별자(IDFA)</li>
+            </ul>
+
+            <h3>2.2 수집 방법</h3>
+            <ul>
+                <li>익명 로그인 방식으로 앱 사용</li>
+                <li>자동화된 로그 수집 도구를 통한 수집</li>
+            </ul>
+
+            <h2>3. 개인정보의 보유 및 이용 기간</h2>
+            <p>회사는 법령에 따른 개인정보 보유·이용기간 또는 이용자로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+
+            <ul>
+                <li><strong>회원 정보:</strong> 회원 탈퇴 시까지 (단, 관련 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관)</li>
+                <li><strong>명상 기록:</strong> 회원 탈퇴 후 30일 이내 삭제</li>
+                <li><strong>앱 사용 로그:</strong> 수집일로부터 1년</li>
+            </ul>
+
+
+            <h2>4. 개인정보처리의 위탁</h2>
+            <p>회사는 원활한 서비스 제공을 위해 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</p>
+
+            <ul>
+                <li><strong>Supabase:</strong> 데이터 저장 및 관리</li>
+                <li><strong>Google (Firebase, AdMob):</strong> 앱 분석, 푸시 알림, 광고 서비스</li>
+
+            </ul>
+
+            <h2>5. 이용자의 권리</h2>
+            <p>이용자는 언제든지 이메일(<strong>huiseon.apps@gmail.com</strong>)을 통해 개인정보 열람, 정정, 삭제 또는 처리정지를 요청하실 수 있습니다.</p>
+
+            <h2>6. 개인정보의 파기</h2>
+            <p>회사는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기합니다.</p>
+            <p>전자적 파일은 복구 불가능한 방법으로 영구 삭제합니다.</p>
+
+            <h2>7. 개인정보의 안전성 확보 조치</h2>
+            <p>회사는 Supabase, Google Firebase, Google AdMob 등의 신뢰할 수 있는 클라우드 서비스를 통해 개인정보를 관리하며, 각 서비스 제공자는 업계 표준에 따른 보안
+                조치를 적용하고 있습니다.</p>
+
+            <h2>8. 개인정보 보호책임자</h2>
+            <div class="highlight-box">
+                <p><strong>개인정보 보호책임자</strong></p>
+                <ul>
+                    <li><strong>이메일:</strong> huiseon.apps@gmail.com</li>
+                    <li><strong>담당 부서:</strong> 마인드풀에어 운영팀</li>
+                </ul>
+                <p>개인정보 관련 문의, 불만처리, 피해구제 등에 관한 사항을 위 연락처로 문의하실 수 있습니다.</p>
+            </div>
+
+            <h2>9. 개인정보처리방침의 변경</h2>
+            <p>이 개인정보처리방침은 2026년 1월 22일부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 앱 내 공지사항을 통하여 고지할
+                것입니다.</p>
+
+
+            <h2>10. 개인정보 침해 관련 상담 및 신고</h2>
+            <p>개인정보 침해에 대한 신고나 상담이 필요하신 경우 아래 기관에 문의하실 수 있습니다.</p>
+
+            <ul>
+                <li><strong>개인정보침해신고센터:</strong> (국번없이) 118 (privacy.kisa.or.kr)</li>
+                <li><strong>개인정보분쟁조정위원회:</strong> 1833-6972 (kopico.go.kr)</li>
+                <li><strong>대검찰청 사이버수사과:</strong> (국번없이) 1301 (spo.go.kr)</li>
+                <li><strong>경찰청 사이버안전국:</strong> (국번없이) 182 (cyberbureau.police.go.kr)</li>
+            </ul>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-link">← 홈으로 돌아가기</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 마인드풀에어. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객지원 - 마인드풀에어</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #7FAF9B;
+            --accent-teal: #5A9E8C;
+            --bg-beige: #F4F1EC;
+            --surface-beige: #FDFCFA;
+            --text-green: #3A4A45;
+            --text-muted: rgba(58, 74, 69, 0.7);
+            --shadow: 0 4px 20px rgba(90, 158, 140, 0.15);
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--bg-beige);
+            color: var(--text-green);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--surface-beige);
+            border-radius: 25px;
+            border: 1px solid var(--primary-teal);
+            color: var(--text-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(127, 175, 155, 0.15);
+        }
+
+        .lang-link:hover {
+            background: var(--primary-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.25);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-teal);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .content-box {
+            background: var(--surface-beige);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--accent-teal);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-teal);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .contact-box {
+            background: rgba(127, 175, 155, 0.1);
+            border-left: 4px solid var(--primary-teal);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--text-green);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-details a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-teal);
+        }
+
+        .faq-item {
+            background: rgba(127, 175, 155, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(127, 175, 155, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(127, 175, 155, 0.08);
+            border-color: var(--primary-teal);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.15);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-green);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .faq-answer ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .version-info {
+            background: rgba(127, 175, 155, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            border-radius: 30px;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(127, 175, 155, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-box {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switcher">
+        <a href="en/support.html" class="lang-link">🇺🇸 English</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>고객지원</h1>
+            <p class="subtitle">도움이 필요하신가요? 언제든지 문의해 주세요!</p>
+        </header>
+
+
+        <div class="content-box">
+            <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 명상 기록이 저장되지 않아요</div>
+                <div class="faq-answer">
+                    <p>명상 기록은 오프라인에서도 기기에 저장되며, 인터넷에 연결되면 자동으로 클라우드에 동기화됩니다.</p>
+                    <p>다음 방법을 시도해보세요:</p>
+                    <ul>
+                        <li>앱을 완전히 종료 후 재시작해보세요</li>
+                        <li>최신 버전으로 업데이트했는지 확인하세요</li>
+                        <li>인터넷 연결 시 자동 동기화 확인</li>
+                        <li>문제가 계속되면 이메일로 문의해주세요</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 호흡 가이드 속도를 조절할 수 있나요?</div>
+                <div class="faq-answer">
+                    <p>네! 앱 내 설정 > 호흡 설정에서 각 호흡 단계의 시간을 자유롭게 조절할 수 있습니다. 자신에게 맞는 편안한 속도로 설정하세요.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 오프라인에서도 사용할 수 있나요?</div>
+                <div class="faq-answer">
+                    <p>네! 기본적인 호흡 명상 기능은 오프라인에서도 모두 사용 가능합니다.</p>
+                    <p>인터넷 연결이 필요한 기능:</p>
+                    <ul>
+                        <li>클라우드 기록 동기화</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 데이터를 삭제하고 싶어요</div>
+                <div class="faq-answer">
+                    <p>앱 내 <strong>설정 메뉴</strong>에서 계정과 모든 데이터를 삭제할 수 있습니다.</p>
+                    <p>계정 삭제 시 기기 및 클라우드에 저장된 모든 명상 기록이 영구적으로 삭제되며, 이 작업은 되돌릴 수 없습니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. 광고를 제거할 수 있나요?</div>
+                <div class="faq-answer">
+                    <p>현재 마인드풀에어는 무료 앱으로 제공되며, 광고를 통해 서비스를 유지하고 있습니다. 향후 프리미엄 버전을 통한 광고 제거 옵션을 고려하고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2>🔧 문제 해결 가이드</h2>
+
+            <h3>앱이 느리거나 멈춰요</h3>
+            <p>다음 단계를 차례대로 시도해보세요:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted); margin-bottom: 20px;">
+                <li>앱을 완전히 종료하고 재시작</li>
+                <li>기기 재시작</li>
+                <li>App Store에서 최신 버전으로 업데이트</li>
+                <li>기기의 저장 공간 확인 (최소 500MB 이상 권장)</li>
+                <li>iOS를 최신 버전으로 업데이트</li>
+            </ul>
+
+            <h3>사운드가 재생되지 않아요</h3>
+            <p>다음을 확인해주세요:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted);">
+                <li>기기의 볼륨이 켜져 있는지 확인</li>
+                <li>무음 모드가 해제되어 있는지 확인</li>
+                <li>앱 내 설정에서 사운드가 활성화되어 있는지 확인</li>
+                <li>블루투스 이어폰 연결 상태 확인</li>
+            </ul>
+
+            <div class="version-info">
+                <p><strong>현재 최신 버전:</strong> 1.0.3</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">지속적인 업데이트로 더 나은 서비스를 제공하겠습니다.</p>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2>💡 더 많은 도움이 필요하신가요?</h2>
+
+            <div class="contact-box">
+                <h3>이메일 문의</h3>
+                <div class="contact-info">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-details">
+                        <a href="mailto:huiseon.apps@gmail.com">huiseon.apps@gmail.com</a>
+                        <p style="margin-top: 10px; font-size: 0.95rem;">최대한 빠르게 답변드리겠습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>문의 시 다음 정보를 함께 보내주시면 더 빠른 해결이 가능합니다:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted); margin-bottom: 20px;">
+                <li>사용 중인 iOS 버전</li>
+                <li>앱 버전 (설정 > 정보에서 확인 가능)</li>
+                <li>발생한 문제의 상세 설명 및 스크린샷</li>
+            </ul>
+
+            <p>위 내용으로 해결되지 않는 문제가 있으시면 언제든지 위 이메일로 문의해 주세요.</p>
+            <p>여러분의 소중한 피드백은 앱을 개선하는 데 큰 도움이 됩니다. 🙏</p>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-link">← 홈으로 돌아가기</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 마인드풀에어. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

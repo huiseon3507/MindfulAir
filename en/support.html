@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - MindfulAir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-teal: #7FAF9B;
+            --accent-teal: #5A9E8C;
+            --bg-beige: #F4F1EC;
+            --surface-beige: #FDFCFA;
+            --text-green: #3A4A45;
+            --text-muted: rgba(58, 74, 69, 0.7);
+            --shadow: 0 4px 20px rgba(90, 158, 140, 0.15);
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background: var(--bg-beige);
+            color: var(--text-green);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--surface-beige);
+            border-radius: 25px;
+            border: 1px solid var(--primary-teal);
+            color: var(--text-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(127, 175, 155, 0.15);
+        }
+
+        .lang-link:hover {
+            background: var(--primary-teal);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.25);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-teal);
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .content-box {
+            background: var(--surface-beige);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--accent-teal);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-teal);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .contact-box {
+            background: rgba(127, 175, 155, 0.1);
+            border-left: 4px solid var(--primary-teal);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: var(--text-green);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+        }
+
+        .contact-details a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-teal);
+        }
+
+        .faq-item {
+            background: rgba(127, 175, 155, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(127, 175, 155, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(127, 175, 155, 0.08);
+            border-color: var(--primary-teal);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 175, 155, 0.15);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-green);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .faq-answer ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .version-info {
+            background: rgba(127, 175, 155, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-teal) 100%);
+            border-radius: 30px;
+            margin-top: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(127, 175, 155, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(127, 175, 155, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-box {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lang-switcher">
+        <a href="../support.html" class="lang-link">🇰🇷 한국어</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Support</h1>
+            <p class="subtitle">Need help? Feel free to contact us anytime!</p>
+        </header>
+
+
+        <div class="content-box">
+            <h2>❓ Frequently Asked Questions (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. My meditation records aren't being saved</div>
+                <div class="faq-answer">
+                    <p>Meditation records are saved on your device even offline, and automatically sync to the cloud
+                        when you're connected to the internet.</p>
+                    <p>Please try the following:</p>
+                    <ul>
+                        <li>Force quit and restart the app</li>
+                        <li>Make sure you've updated to the latest version</li>
+                        <li>Check automatic sync when internet is available</li>
+                        <li>If the problem persists, please contact us via email</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="faq-item">
+                <div class="faq-question">Q. Can I adjust the breathing guide speed?</div>
+                <div class="faq-answer">
+                    <p>Yes! You can freely adjust the duration of each breathing phase in Settings > Breathing Settings.
+                        Set it to a comfortable speed that suits you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. Can I use the app offline?</div>
+                <div class="faq-answer">
+                    <p>Yes! All basic breathing meditation features are available offline.</p>
+                    <p>Features that require internet connection:</p>
+                    <ul>
+                        <li>Cloud record synchronization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. How do I delete my data?</div>
+                <div class="faq-answer">
+                    <p>You can delete your account and all data through the <strong>Settings menu</strong> in the app.
+                    </p>
+                    <p>When you delete your account, all meditation records stored on your device and in the cloud will
+                        be permanently deleted. This action cannot be undone.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q. Can I remove ads?</div>
+                <div class="faq-answer">
+                    <p>MindfulAir is currently provided as a free app supported by ads. We're considering a premium
+                        version with ad removal in the future.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2>🔧 Troubleshooting Guide</h2>
+
+            <h3>The app is slow or freezing</h3>
+            <p>Try these steps in order:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted); margin-bottom: 20px;">
+                <li>Force quit and restart the app</li>
+                <li>Restart your device</li>
+                <li>Update to the latest version from the App Store</li>
+                <li>Check your device storage (at least 500MB recommended)</li>
+                <li>Update iOS to the latest version</li>
+            </ul>
+
+            <h3>Sound isn't playing</h3>
+            <p>Please check the following:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted);">
+                <li>Check that your device volume is turned up</li>
+                <li>Make sure silent mode is turned off</li>
+                <li>Verify that sound is enabled in the app settings</li>
+                <li>Check Bluetooth earphone connection status</li>
+            </ul>
+
+            <div class="version-info">
+                <p><strong>Current Latest Version:</strong> 1.0.3</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">We're committed to providing better service through
+                    continuous updates.</p>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2>💡 Need More Help?</h2>
+
+            <div class="contact-box">
+                <h3>Email Support</h3>
+                <div class="contact-info">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-details">
+                        <a href="mailto:huiseon.apps@gmail.com">huiseon.apps@gmail.com</a>
+                        <p style="margin-top: 10px; font-size: 0.95rem;">We'll respond as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>For faster resolution, please include the following information with your inquiry:</p>
+            <ul style="margin-left: 25px; color: var(--text-muted); margin-bottom: 20px;">
+                <li>iOS version you're using</li>
+                <li>App version (found in Settings > About)</li>
+                <li>Detailed description of the issue and screenshots</li>
+            </ul>
+
+            <p>If your issue isn't resolved by the information above, please feel free to contact us at the email above.
+            </p>
+            <p>Your valuable feedback helps us improve the app. 🙏</p>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MindfulAir. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
